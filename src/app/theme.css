@@ -1,0 +1,31 @@
+/* Typography configuration and evidence cards */
+.portfolio-fonts {
+  --font-space-grotesk: "Space Grotesk", "Space Grotesk Fallback";
+  --font-instrument-serif: "Instrument Serif", "Instrument Serif Fallback";
+  --font-jetbrains-mono: "JetBrains Mono", "JetBrains Mono Fallback";
+  --font-inter: "Inter", "Inter Fallback";
+}
+.evidence-print {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12%;
+  color: #f2ece1;
+}
+.evidence-print span {
+  font-size: 9px;
+  line-height: 1.4;
+}
+.evidence-print strong {
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+@media (max-width: 639px) {
+  .evidence-print {
+    padding: 9%;
+  }
+  .evidence-print span {
+    font-size: 7px;
+  }
+}
