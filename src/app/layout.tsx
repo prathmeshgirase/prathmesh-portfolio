@@ -4,7 +4,7 @@ import { profile } from "@/data/portfolio";
 import "./portfolio.css";
 import "./theme.css";
 
-const SITE_URL = "https://prathmesh-portfolio-lipen5ikc.vercel.app";
+const SITE_URL = "https://prathmeshgirase.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
