@@ -4,14 +4,69 @@ import { profile } from "@/data/portfolio";
 import "./portfolio.css";
 import "./theme.css";
 
+const SITE_URL = "https://prathmesh-portfolio-lipen5ikc.vercel.app";
+
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.role}`,
-  description: profile.summary,
-  icons: { icon: "/favicon.svg" },
+  metadataBase: new URL(SITE_URL),
+  title: "Prathmesh Girase | Software Developer",
+  description:
+    "Prathmesh Girase is a full-stack software developer specialising in React, React Native, Java, and Spring Boot. Building dependable web and mobile products — from backend APIs to production interfaces.",
+  applicationName: "Prathmesh Girase Portfolio",
+  authors: [{ name: "Prathmesh Girase", url: SITE_URL }],
+  creator: "Prathmesh Girase",
+  publisher: "Prathmesh Girase",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
-    title: `${profile.name} — ${profile.role}`,
+    type: "profile",
+    url: SITE_URL,
+    siteName: "Prathmesh Girase",
+    title: "Prathmesh Girase | Software Developer",
+    description:
+      "Prathmesh Girase is a full-stack software developer specialising in React, React Native, Java, and Spring Boot. Building dependable web and mobile products — from backend APIs to production interfaces.",
+    firstName: "Prathmesh",
+    lastName: "Girase",
+    username: "prathmeshgirase",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prathmesh Girase | Software Developer",
+    description:
+      "Prathmesh Girase is a full-stack software developer specialising in React, React Native, Java, and Spring Boot.",
+  },
+  icons: { icon: "/favicon.svg" },
+};
+
+// JSON-LD structured data — ProfilePage → Person
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  url: SITE_URL,
+  name: `${profile.name} — Developer Portfolio`,
+  mainEntity: {
+    "@type": "Person",
+    name: profile.name,
+    url: SITE_URL,
+    jobTitle: profile.role,
     description: profile.summary,
-    type: "website",
+    sameAs: [profile.github, profile.linkedin],
+    knowsAbout: [
+      "React",
+      "React Native",
+      "Java",
+      "Spring Boot",
+      "Full-Stack Development",
+      "REST APIs",
+    ],
   },
 };
 
@@ -35,6 +90,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="portfolio-fonts antialiased">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <div aria-hidden="true" className="grain" />
         {children}
