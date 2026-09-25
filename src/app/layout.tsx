@@ -44,6 +44,9 @@ export const metadata: Metadata = {
       "Prathmesh Girase is a full-stack software developer specialising in React, React Native, Java, and Spring Boot.",
   },
   icons: { icon: "/favicon.svg" },
+  verification: {
+    google: "7DbkGz0lg370JN3o2ddRueCNKvN9K6QlDJzg4PIecMs",
+  },
 };
 
 // JSON-LD structured data — ProfilePage → Person
