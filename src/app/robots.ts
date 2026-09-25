@@ -10,6 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://prathmesh-portfolio-lipen5ikc.vercel.app/sitemap.xml",
+    sitemap: "https://prathmeshgirase.vercel.app/sitemap.xml",
   };
 }
